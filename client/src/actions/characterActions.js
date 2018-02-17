@@ -20,14 +20,20 @@ export function fetchCharacters() {
 //   };
 // }
 
-export function addCharacter(character) {
+export function addCharacter(characterParams) {
+	console.log(characterParams)	
   return (dispatch) => {
     // dispatch({type: 'ADD_CHARACTER'});
     return fetch(`api/characters`, { 
-    	method: 'POST'})
+    	method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+    	body: JSON.stringify({ character: characterParams } )
+    	})
       .then(response => response.json() )      
       .then(responseJSON => {
-      	
+
       	console.log(responseJSON)
       })
   }
