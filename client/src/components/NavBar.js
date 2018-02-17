@@ -39,6 +39,14 @@ const NavBar = () =>
         background: 'darkblue'
       }}
     >Characters</NavLink>
+    <NavLink
+      to="/characterswithquotes"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Characters with Quotes</NavLink>
   </div>;
 
 export default NavBar;

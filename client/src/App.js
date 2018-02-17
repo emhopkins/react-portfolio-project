@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Quotes from './components/Quotes';
 import Characters from './components/Characters';
+import CharactersPage from './containers/CharactersPage'
 
 export class App extends Component {
   componentDidMount(){
@@ -23,7 +24,8 @@ export class App extends Component {
        <NavBar />
        <Route exact path="/" component={Home} />
        <Route exact path ="/quotes" component={(props) => <Quotes quotes={this.props.quoteText} />} />
-       <Route exact path ="/characters" component={(props) => <Characters characters={this.props.characters} />} />
+       <Route exact path ="/characterswithquotes" component={(props) => <Characters characters={this.props.characters} />} />
+       <Route path='/characters' component={CharactersPage}/>
      </div>
     </Router>
     );
@@ -39,3 +41,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
