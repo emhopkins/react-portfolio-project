@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   scope '/api' do
     get :quotes, to: 'quotes#index'
     get :characters, to: 'characters#index'
+    post :characters, to: 'characters#create'
   end
 end

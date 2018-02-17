@@ -17,6 +17,7 @@ class CharactersNew extends Component {
     // Destructure addCharacter and history from the components props
     const { addCharacter, history } = this.props;
     // Create the character with the Redux action
+    history.push('/')
     addCharacter(this.state);
     // redirect to /characters route
     history.push('/')

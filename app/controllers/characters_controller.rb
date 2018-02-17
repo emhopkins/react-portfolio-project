@@ -18,4 +18,16 @@ class CharactersController < ApplicationController
     end
   end
 
+  def create
+    c = Character.create(character_params)
+    render(
+      status: 200,
+      json: c
+    )
+  end
+
+  def character_params
+    params.require(:character).permit(:name)
+  end
+
 end
