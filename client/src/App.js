@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
-import QuoteList from './QuoteList'
+import {Navbar} from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { fetchQuotes } from './actions/quoteActions'

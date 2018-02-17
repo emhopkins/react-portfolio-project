@@ -22,7 +22,7 @@ class CharactersNew extends Component {
     addCharacter(this.state);
 
     // redirect to /characters route
-    history.push('/characterswithquotes')
+    history.push('/characters')
   }
  
   handleOnChange = event => {

@@ -25,7 +25,7 @@ export function addCharacter(characterParams) {
       .then(response => response.json() )      
       .then(responseJSON => {
       	console.log(responseJSON)
-      	dispatch({type: 'ADD_CHARACTER'})
+      	dispatch({type: 'ADD_CHARACTER', payload: responseJSON})
       })
   }
 }
