@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import SelectedQuotes from './SelectedQuotes';
+import QuoteSearch from './QuoteSearch';
 
 class App extends Component {
+  state = {
+    selectedQuotes: [],
+  }
+
+  removeQuoteItem = (itemIndex) => {
+    const filteredQuotes = this.state.selectedQuotes.filter(
+      (item, idx) => itemIndex !== idx,
+    );
+    this.setState({ selectedQuotes: filteredQuotes });
+  }
+
+  addQuote = (quote) => {
+    const newQuotes = this.state.selectedQuotes.concat(quote);
+    this.setState({ selectedQuotes: newQuotes });
+  }
+
   render() {
+    const { selectedQuotes } = this.state;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='App'>
+        <div className='ui text container'>
+          <QuoteSearch
+            onQuoteClick={this.addQuote}
+          />
+        </div>
       </div>
     );
   }
