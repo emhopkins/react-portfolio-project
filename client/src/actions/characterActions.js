@@ -12,18 +12,9 @@ export function fetchCharacters() {
   }
 }
 
-// export function addCharacter(character) {
-//   // character.id = 10;
-//   return {
-//     type: 'ADD_CHARACTER',
-//     character
-//   };
-// }
-
 export function addCharacter(characterParams) {
 	console.log(characterParams)	
   return (dispatch) => {
-    // dispatch({type: 'ADD_CHARACTER'});
     return fetch(`api/characters`, { 
     	method: 'POST',
         headers: {
@@ -33,9 +24,8 @@ export function addCharacter(characterParams) {
     	})
       .then(response => response.json() )      
       .then(responseJSON => {
-
       	console.log(responseJSON)
+      	dispatch({type: 'ADD_CHARACTER'})
       })
   }
 }
-

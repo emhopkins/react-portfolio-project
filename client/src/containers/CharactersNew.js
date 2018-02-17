@@ -4,6 +4,7 @@ import { addCharacter } from '../actions/characterActions';
  
 class CharactersNew extends Component {
  
+
   constructor() {
     super();
  
@@ -11,7 +12,7 @@ class CharactersNew extends Component {
       name: ''
     };
   }
- 
+
   handleOnSubmit = event => {
     event.preventDefault();
     // Destructure addCharacter and history from the components props
@@ -19,8 +20,9 @@ class CharactersNew extends Component {
     // Create the character with the Redux action
     history.push('/')
     addCharacter(this.state);
+
     // redirect to /characters route
-    history.push('/')
+    history.push('/characterswithquotes')
   }
  
   handleOnChange = event => {
