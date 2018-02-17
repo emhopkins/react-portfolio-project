@@ -1,4 +1,4 @@
-# react-portfolio-project - The Office Quote 
+# react-portfolio-project - Quotes from The Office 
 
 Flatiron school rails portfolio project by Elena Hopkins
 
