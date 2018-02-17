@@ -5,7 +5,7 @@ const Quotes = (props) => {
     <div>
     	<h1>Quotes Page</h1>
         	{props.quotes.map((quote, index) => {
-        		return <div key={index}>{quote.text}</div> })}
+        		return <div key={index}>{quote.text} - {quote.character.name}</div> })}
     </div>
   );
 };
