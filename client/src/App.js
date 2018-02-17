@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Quotes from './components/Quotes';
-import Characters from './components/Characters';
+import All from './components/All';
 import CharactersPage from './containers/CharactersPage'
 
 export class App extends Component {
@@ -23,7 +23,7 @@ export class App extends Component {
        <NavBar />
        <Route exact path="/" component={Home} />
        <Route exact path ="/quotes" component={(props) => <Quotes quotes={this.props.quoteText} />} />
-       <Route exact path ="/characterswithquotes" component={(props) => <Characters characters={this.props.characters} />} />
+       <Route exact path ="/all" component={(props) => <All characters={this.props.characters} />} />
        <Route path='/characters' component={CharactersPage}/>
      </div>
     </Router>
