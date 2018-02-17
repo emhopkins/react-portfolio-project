@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import catsReducer from './cats_reducer'
+import quotesReducer from './quotes_reducer'
 
 const rootReducer = combineReducers({
-  cats: catsReducer
+  quotes: quotesReducer
 });
 
 export default rootReducer;
