@@ -4,6 +4,7 @@ import QuoteList from './QuoteList'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { fetchQuotes } from './actions/quoteActions'
+import { fetchCharacters } from './actions/characterActions'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -27,11 +28,11 @@ export class App extends Component {
 }
 const mapStateToProps = (state) => {
 
-  return {quoteText: state.quotes.data}
+  return {quoteText: state.quotes.data, characters: state.characters.data}
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    fetchQuotes
+    fetchQuotes, fetchCharacters
   }, dispatch)
 }
 export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App);
