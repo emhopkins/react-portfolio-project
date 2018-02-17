@@ -2,6 +2,7 @@
 import React from 'react';
 
 const QuoteList = ({ quoteText }) => {
+  console.log(quoteText)
   let quotes = quoteText.map(quote => <div>{`${quote.text}`} </div>);
 
   return (

@@ -20,14 +20,14 @@ export class App extends Component {
           </Navbar.Header>
         </Navbar>
 
-        <QuoteList quotePics={this.props.quoteText}/>
+        <QuoteList quoteText={this.props.quoteText}/>
       </div>
     );
   }
 }
 const mapStateToProps = (state) => {
 
-  return {quoteText: state.quotes.text}
+  return {quoteText: state.quotes.data}
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({

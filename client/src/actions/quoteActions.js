@@ -2,16 +2,17 @@ import fetch from 'isomorphic-fetch';
 
 export function fetchQuotes() {
   return (dispatch) => {
-    dispatch({type: 'LOADING_CATS'});
+    dispatch({type: 'LOADING_QUOTES'});
     return fetch(`api/quotes`)
-      .then(response => response.json())
+      .then(response => response.json() )      
       .then(responseJSON => {
-        dispatch({type: 'FETCH_CATS', payload: responseJSON.images})
+      	console.log(responseJSON)
+        dispatch({type: 'FETCH_QUOTES', payload: responseJSON})
       })
   }
 }
 
-// function search(query, cb) {
+// export function fetchQuotes(query, cb) {
 //   return fetch(`api/quotes?q=${query}`, {
 //     accept: 'application/json',
 //   }).then(checkStatus)

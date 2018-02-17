@@ -1,9 +1,9 @@
-export default function quotesReducer(state = { loading: false, text: [] }, action) {
+export default function quotesReducer(state = { loading: false, data: [] }, action) {
   switch(action.type) {
     case 'LOADING_QUOTES':
       return Object.assign({}, state, {loading: true});
     case 'FETCH_QUOTES':
-      return {loading: false, text: action.payload};
+      return {loading: false, data: action.payload};
     default:
       return state;
   }
