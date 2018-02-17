@@ -4,6 +4,8 @@ export default function charactersReducer(state = { loading: false, data: [] }, 
       return Object.assign({}, state, {loading: true});
     case 'FETCH_CHARACTERS':
       return {loading: false, data: action.payload};
+    case 'ADD_CHARACTER':
+      return state.concat(action.payload);
     default:
       return state;
   }

@@ -40,6 +40,14 @@ const NavBar = () =>
       }}
     >Characters</NavLink>
     <NavLink
+      to="/characters/new"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >New Character</NavLink>
+    <NavLink
       to="/characterswithquotes"
       exact
       style={link}
