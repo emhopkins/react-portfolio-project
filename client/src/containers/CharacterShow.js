@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 const CharacterShow = ({ character }) =>
   <div>
     <h3>Name: {character.name}</h3>
+    	<ul>{character.quotes.map((quote, index) => { return <li key={index}>{quote.text}</li>} )}</ul>
   </div>
  
 const mapStateToProps = (state, ownProps) => {
