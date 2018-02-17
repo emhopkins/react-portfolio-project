@@ -32,21 +32,13 @@ const NavBar = () =>
       }}
     >Quotes</NavLink>
     <NavLink
-      to="/directors"
+      to="/characters"
       exact
       style={link}
       activeStyle={{
         background: 'darkblue'
       }}
-    >Directors</NavLink>
-    <NavLink
-      to="/actors"
-      exact
-      style={link}
-      activeStyle={{
-        background: 'darkblue'
-      }}
-    >Actors</NavLink>
+    >Characters</NavLink>
   </div>;
 
 export default NavBar;

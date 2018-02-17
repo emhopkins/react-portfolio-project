@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Quotes from './components/Quotes';
+import Characters from './components/Characters';
+
 export class App extends Component {
   componentDidMount(){
     this.props.fetchQuotes();
@@ -21,6 +23,7 @@ export class App extends Component {
        <NavBar />
        <Route exact path="/" component={Home} />
        <Route exact path ="/quotes" component={(props) => <Quotes quotes={this.props.quoteText} />} />
+       <Route exact path ="/characters" component={(props) => <Characters characters={this.props.characters} />} />
      </div>
     </Router>
     );
