@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import QuoteLi from './QuoteLi'
 
-const All = ({characters}) => {
-  return (
+class All extends Component {
+
+  constructor() {
+    super();
+ 
+  }
+ 
+
+  render(){
+    return (
     <div>
     	<h1>All Quotes by Character</h1>
-        	{characters.map((character, index) => {
+        	{this.props.characters.map((character, index) => {
         		return <div key={index}>{character.name}
-        						<ul>{character.quotes.map((quote, index) => { return <li key={index}>{quote.text}</li>} )}</ul>
-        					</div> })}
+        						<ul>
+        							{ character.quotes.map((quote, index) => { return <QuoteLi key={index} quote={quote} /> })}
+        						</ul> 
+        				</div> })}
     </div>
-  );
+    );
+  }
 }
 
 export default All
