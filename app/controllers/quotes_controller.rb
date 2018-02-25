@@ -19,7 +19,7 @@ class QuotesController < ApplicationController
   end
 
   def upvote
-    quote = Quote.find(params[:id])
+    quote = Quote.find(quote_params[:id])
     if quote.votes.nil?
       quote.votes = 1
     else

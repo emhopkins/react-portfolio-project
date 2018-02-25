@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { upvoteQuote } from '../actions/quoteActions';
 
 class QuoteLi extends Component {
 
@@ -6,16 +8,25 @@ class QuoteLi extends Component {
     super();
  
     this.state = {
-      clicks: 0
+      // id: this.props.quote.id
     };
   }
  
   handleOnClick = event => {
   	console.log('hi!')
-    this.setState({
-      clicks: this.state.clicks += 1
-    });
+    // this.setState({
+    //   clicks: this.state.clicks += 1
+    // });
+
+    event.preventDefault();
+    // Destructure addCharacter and history from the components props
+    const { upvoteQuote, history } = this.props;
+   
+    upvoteQuote(this.props.quote);
+
   }
+
+
  
   render(){
     return (
@@ -26,4 +37,4 @@ class QuoteLi extends Component {
   }
 }
 
-export default QuoteLi
+export default connect(null, { upvoteQuote })(QuoteLi)
