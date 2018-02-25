@@ -4,6 +4,8 @@ export default function quotesReducer(state = { loading: false, data: [] }, acti
       return Object.assign({}, state, {loading: true});
     case 'FETCH_QUOTES':
       return {loading: false, data: action.payload};
+    case 'UPVOTE_QUOTE':
+    	return {loading:false, data: state.data.concat(action.payload) }
     default:
       return state;
   }

@@ -11,3 +11,21 @@ export function fetchQuotes() {
       })
   }
 }
+
+export function upvoteQuote(quoteParams) {
+	console.log(quoteParams)	
+  return (dispatch) => {
+    return fetch(`api/quotes/upvote`, { 
+    	method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+    	body: JSON.stringify({ quote: quoteParams } )
+    	})
+      .then(response => response.json() )      
+      .then(responseJSON => {
+      	console.log(responseJSON)
+      	dispatch({type: 'UPVOTE_QUOTE', payload: responseJSON})
+      })
+  }
+}
