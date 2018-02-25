@@ -17,4 +17,22 @@ class QuotesController < ApplicationController
       )
     end
   end
+
+  def upvote
+    quote = Quote.find(params[:id])
+    if quote.votes.nil?
+      quote.votes = 1
+    else
+      quote.votes += 1
+    end
+    quote.save!
+    render(
+      status: 200,
+      json: quote
+    )
+  end
+
+  def quote_params
+    params.require(:quote)
+  end
 end
