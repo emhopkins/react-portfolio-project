@@ -20,7 +20,7 @@ quotes = Quote.create([{ text: "I feel like all my kids grew up, and then they m
 	{ text: "The diabetes award goes to Stanley Hudson. Come on up here you sick bastard.", character: michael},
 	{ text: "It goes to show that everything you want in life you get. And you can't work for it. It just comes to you.", character: michael},
 	{ text: "I'm upset. My bladder is full. There is no telling what I might do right now, all over the inside of your precious little car.", character: michael},
-	{ text: "I used to love coming here. The chicken parm is good, big part of my childhood. Oh! Maybe Michael will start dating that too.", character: michael},
+	{ text: "I used to love coming here. The chicken parm is good, big part of my childhood. Oh! Maybe Michael will start dating that too.", character: pam},
 	{ text: "I make that one copy, and I become the girl who makes copies, and by the end of the day I'm receptionist again. And the worst part is, I like making copies. The paper comes out all warm and stuff. And it's cold in there. Cause it's technically a closet.", character: pam},
 	{ text: "Dwight mercy killed Angela's cat. It's very complicated. It's caused a lot of unpleasantness between Dwight and Angela. Who are both already prone to unpleasantness.", character: pam},
 	{ text: "This is the last day of our summer interns. It's been nice. We haven't had interns in a while. Ever since Michael's Monica Lewinsky incident. He didn't do anything sexual, he just made far, far too many Monica Lewinsky jokes. It was just easier for Corporate to shut down the program.", character: pam},
