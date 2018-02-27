@@ -8,7 +8,7 @@ const CharacterShow = ({ character }) =>
   </div>
  
 const mapStateToProps = (state, ownProps) => {
-  const character = state.characters.data.find(character => character.id == ownProps.match.params.characterId)
+  const character = state.characters.data.find(character => character.id === parseInt(ownProps.match.params.characterId, 10))
  
   if (character) {
     return { character }
