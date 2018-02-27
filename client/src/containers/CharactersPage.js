@@ -7,7 +7,6 @@ import CharactersNew from './CharactersNew'
  
 const CharactersPage = ({ match, characters }) => 
   <div>
-    <h1></h1>
     <CharactersList characters={characters} />
     <Switch>
     <Route path={`${match.url}/new`} component={CharactersNew} />

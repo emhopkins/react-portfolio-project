@@ -1,40 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { upvoteQuote } from '../actions/quoteActions';
+import { bindActionCreators } from 'redux';
 
 class QuoteLi extends Component {
 
-  constructor() {
-    super();
- 
-    this.state = {
-      // id: this.props.quote.id
-    };
-  }
- 
   handleOnClick = event => {
-  	console.log('hi!')
-    // this.setState({
-    //   clicks: this.state.clicks += 1
-    // });
-
-    event.preventDefault();
-    // Destructure addCharacter and history from the components props
-    const { upvoteQuote, history } = this.props;
-   
-    upvoteQuote(this.props.quote);
-
+    this.props.upvoteQuote(this.props.quote);
   }
-
-
  
   render(){
     return (
       <div>
-      <li key={this.props.index}>{this.props.quote.text}</li><button onClick={this.handleOnClick}>Click Number: {this.state.clicks}</button>
+      <li key={this.props.index}>{this.props.quote.text}</li><button onClick={this.handleOnClick}>Upvotes: {this.props.stateQuote.votes === null ? 0 : this.props.stateQuote.votes}</button>
       </div>
     );
   }
 }
 
-export default connect(null, { upvoteQuote })(QuoteLi)
+
+const mapStateToProps = (state, ownProps) => {
+
+  if (state.quotes.data[ownProps.quote.id] !== undefined) {
+    return {stateQuote: state.quotes.data[ownProps.quote.id - 1]}
+  } else {
+      return {stateQuote: state.quotes.data}
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    upvoteQuote
+  }, dispatch)
+}
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(QuoteLi)

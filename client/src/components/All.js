@@ -3,12 +3,6 @@ import QuoteLi from './QuoteLi'
 
 class All extends Component {
 
-  constructor() {
-    super();
- 
-  }
- 
-
   render(){
     return (
     <div>

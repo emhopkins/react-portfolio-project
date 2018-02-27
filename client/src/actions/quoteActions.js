@@ -15,6 +15,7 @@ export function fetchQuotes() {
 export function upvoteQuote(quoteParams) {
 	console.log(quoteParams)	
   return (dispatch) => {
+  	dispatch({type: 'LOADING_UPVOTE'});
     return fetch(`api/quotes/upvote`, { 
     	method: 'PATCH',
         headers: {
@@ -24,7 +25,7 @@ export function upvoteQuote(quoteParams) {
     	})
       .then(response => response.json() )      
       .then(responseJSON => {
-      	console.log(responseJSON)
+      	// console.log(responseJSON)
       	dispatch({type: 'UPVOTE_QUOTE', payload: responseJSON})
       })
   }
