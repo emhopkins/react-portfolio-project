@@ -12,20 +12,10 @@ class QuoteLi extends Component {
   render(){
     return (
       <div>
-      <li key={this.props.index}>{this.props.quote.text}</li><button onClick={this.handleOnClick}>Upvotes: {this.props.stateQuote.votes === null ? 0 : this.props.stateQuote.votes}</button>
+      <li key={this.props.index}>{this.props.quote.text}</li><button onClick={this.handleOnClick}>Upvotes: {this.props.quote.votes === null ? 0 : this.props.quote.votes}</button>
       </div>
     );
   }
-}
-
-
-const mapStateToProps = (state, ownProps) => {
-
-  if (state.quotes.data[ownProps.quote.id] !== undefined) {
-    return {stateQuote: state.quotes.data[ownProps.quote.id - 1]}
-  } else {
-      return {stateQuote: state.quotes.data}
-    }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -34,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
  
-export default connect(mapStateToProps, mapDispatchToProps)(QuoteLi)
+export default connect(null, mapDispatchToProps)(QuoteLi)

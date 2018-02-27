@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import QuoteLi from './QuoteLi'
 
 class All extends Component {
+
+
 
   render(){
     return (
@@ -10,7 +13,7 @@ class All extends Component {
         	{this.props.characters.map((character, index) => {
         		return <div key={index}>{character.name}
         						<ul>
-        							{ character.quotes.map((quote, index) => { return <QuoteLi key={index} quote={quote} /> })}
+        							{ this.props.quotes.filter(q => q.character.id === character.id).map((quote, index) => { return <QuoteLi key={index} quote={quote} /> })}
         						</ul> 
         				</div> })}
     </div>
@@ -18,4 +21,8 @@ class All extends Component {
   }
 }
 
-export default All
+const mapStateToProps = (state, ownProps) => {
+  return {quotes: state.quotes.data}
+}
+
+export default connect(mapStateToProps)(All)
