@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import QuoteLi from './QuoteLi';
 
 class Quotes extends Component {
@@ -37,8 +36,4 @@ class Quotes extends Component {
 	};
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {quotes: state.quotes.data}
-}
-
-export default connect(mapStateToProps)(Quotes)
+export default Quotes
