@@ -7,11 +7,7 @@ export default function quotesReducer(state = { loading: false, data: [] }, acti
     case 'FETCH_QUOTES':
       return {loading: false, data: action.payload};
     case 'UPVOTE_QUOTE':
-			return {loading:false, data: state.data.map(quote => 
-				{ if (quote.id === action.payload.id) 
-					{ return quote = action.payload 
-				} else {return quote} } )
-      }
+			return { loading:false, data: state.data.map(quote => quote.id === action.payload.id ? action.payload : quote ) }
     default:
       return state;
   }

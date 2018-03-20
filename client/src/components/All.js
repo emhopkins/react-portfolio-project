@@ -6,6 +6,7 @@ class All extends Component {
 
 
 
+
   render(){
     return (
     <div>
@@ -13,7 +14,7 @@ class All extends Component {
         	{this.props.characters.map((character, index) => {
         		return <div key={index}>{character.name}
         						<ul>
-        							{ this.props.quotes.filter(q => q.character.id === character.id).map((quote, index) => { return <QuoteLi key={index} quote={quote} /> })}
+        							{ this.props.quotes.filter(q => q.character.id === character.id).sort((a,b) => b.votes - a.votes).map((quote, index) => { return <QuoteLi key={index} quote={quote} /> })}
         						</ul> 
         				</div> })}
     </div>
